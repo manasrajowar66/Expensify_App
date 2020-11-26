@@ -11,10 +11,6 @@ import './styles/styles.scss';
 
 const store = createStore();
 
-store.dispatch(addExpence({describtion:'Water bill',amount:200}));
-store.dispatch(addExpence({describtion:'Gas bill',amount:100,createdAt:1000}));
-store.dispatch(addExpence({describtion:'Rent',amount:1000,createdAt:10000}));
-
 
 const Jsx = () =>(
     <Provider store={store}>
