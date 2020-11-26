@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render enpencelist with expences 1`] = `
+<div>
+  <div>
+    <h1>
+      Expence List
+    </h1>
+    <ExpenceListItem
+      amount={167}
+      createdAt={0}
+      describtion="ren"
+      id="1"
+      key="1"
+      note=""
+    />
+    <ExpenceListItem
+      amount={890}
+      createdAt={-345600000}
+      describtion="water"
+      id="2"
+      key="2"
+      note=""
+    />
+    <ExpenceListItem
+      amount={23}
+      createdAt={345600000}
+      describtion="tv"
+      id="3"
+      key="3"
+      note=""
+    />
+  </div>
+</div>
+`;
+
+exports[`should render expence list with no expences 1`] = `
+<div>
+  <p>
+    No expences avalable
+  </p>
+</div>
+`;

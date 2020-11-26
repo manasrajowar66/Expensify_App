@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render expence item 1`] = `
+<div>
+  <[object Object]
+    className="link-decoration"
+    to="/edit/1"
+  >
+    <h2>
+      ren
+    </h2>
+  </[object Object]>
+  167
+   - 
+  0
+</div>
+`;
