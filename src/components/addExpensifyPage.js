@@ -6,7 +6,7 @@ import ExpenceForm from './expenceForm';
 export class CreateExpensifyPage extends React.Component{
     onSubmit = (expence)=>{
         this.props.startAddExpence(expence);
-        this.props.history.push('/');
+        this.props.history.push('/dashboard');
     }
     render(){
         return(

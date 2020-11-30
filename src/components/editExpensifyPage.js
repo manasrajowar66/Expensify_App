@@ -7,11 +7,11 @@ import ExpenceForm from './expenceForm';
 export class EditExpensifyPage extends React.Component{
     onSubmit = (expence)=>{
         this.props.startEditExpence(this.props.expence.id,expence);
-        this.props.history.push('/');
+        this.props.history.push('/dashboard');
     }
     onClick = (expence)=>{
         this.props.startRemoveExpence(expence.id);
-        this.props.history.push('/');
+        this.props.history.push('/dashboard');
     }
     render(){
         return (
