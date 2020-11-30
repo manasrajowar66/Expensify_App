@@ -1,7 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
-import {createStore , combineReducers} from 'redux';
+import {createStore , combineReducers , applyMiddleware , compose} from 'redux';
 import expenceReducer from '../reducers/expences';
 import filterReducer from '../reducers/filter';
+import thunk from 'redux-thunk';
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
     const store = createStore(
@@ -9,7 +12,7 @@ export default () => {
             expences:expenceReducer,
             filters:filterReducer
         }),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        composeEnhancer(applyMiddleware(thunk))
     );
     return store;
 }

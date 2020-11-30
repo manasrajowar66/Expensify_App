@@ -9,6 +9,7 @@ import getVisibleState from './store/visibleExpences';
 import { setTextFilter }from './actions/filters';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
 
 const store = createStore();
 

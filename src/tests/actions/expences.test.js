@@ -28,17 +28,17 @@ test('should setup add action object with data',()=>{
     });
 });
 
-test('should setup add action object with no data',()=>{
-    const action = addExpence();
-    expect(action).toEqual({
-        type:'ADD_EXPENCE',
-        expence:{
-            id:expect.any(String),
-            describtion:'',
-            note:'',
-            amount:0,
-            createdAt:0
-        }
-    });
-});
+// test('should setup add action object with no data',()=>{
+//     const action = addExpence();
+//     expect(action).toEqual({
+//         type:'ADD_EXPENCE',
+//         expence:{
+//             id:expect.any(String),
+//             describtion:'',
+//             note:'',
+//             amount:0,
+//             createdAt:0
+//         }
+//     });
+// });
 
