@@ -15,7 +15,9 @@ const expenceReducer = (state = expencesDefaultReducer , action ) =>{
                 };
                 else
                 return expence;
-            })
+            });
+        case 'SET_EXPENCE':
+            return action.expences;
         default:
             return state;
     }

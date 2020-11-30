@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import AppRoute from './routes/AppRoute';
-import {addExpence} from './actions/expences';
+import { addExpence, startSetExpence } from './actions/expences';
 import createStore from './store/createStore';
 import getVisibleState from './store/visibleExpences';
 import { setTextFilter }from './actions/filters';
@@ -20,10 +20,13 @@ const Jsx = () =>(
     </Provider>
 );
 
-ReactDOM.render(
-    <Jsx />,
-  document.getElementById('root')
-);
+ReactDOM.render(<p>Loading...</p>,document.getElementById('root'));
+
+store.dispatch(startSetExpence()).then(()=>{
+    ReactDOM.render(<Jsx />,
+        document.getElementById('root')
+    );
+})
 
 
 

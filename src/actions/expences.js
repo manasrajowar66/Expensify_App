@@ -31,8 +31,46 @@ export const removeExpence = (id=undefined) =>({
     id
 });
 
-export  const editExpence = (id=undefined,updates={}) =>({
+export const startRemoveExpence = (id)=>{
+    return (dispatch)=>{
+       database.ref(`expences/${id}`).remove().then(()=>{
+           dispatch(removeExpence(id));
+       });
+    }
+}
+
+export  const editExpence = (id,updates={}) =>({
     type:'EDIT_EXPENCE',
     id,
     updates
 });
+
+export const startEditExpence = (id,expence) =>{
+    return (dispatch)=>{
+        return database.ref(`expences/${id}`).update(expence).then(()=>{
+            dispatch(editExpence(id,expence));
+        });
+     }
+}
+
+export const setExpence = (expences) =>({
+  type:'SET_EXPENCE',
+  expences
+});
+
+export const startSetExpence = () =>{
+    return (dispatch)=>{
+        return database.ref('expences').once('value').then((snapshot)=>{
+            const Expences = [];
+            snapshot.forEach((childSnapshot)=>{
+                Expences.push({
+                    ...childSnapshot.val(),
+                    id:childSnapshot.key
+                });
+            });
+            dispatch(setExpence(Expences));
+        });
+    }
+
+};
+
