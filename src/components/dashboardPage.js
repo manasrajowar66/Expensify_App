@@ -9,7 +9,7 @@ export class ExpensifyDashboardPage extends React.Component{
     render(){
         return(
          <div>
-            {!!this.props.expences.length && <ExpenceSummary />}
+            <ExpenceSummary />
             <ExpenceListFilter />
             <ExpenceList />
          </div>

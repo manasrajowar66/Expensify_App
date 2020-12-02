@@ -1,9 +1,17 @@
+*{
+  box-sizing: border-box;
+}
+
 html{
     font-size: 62.5%;
 }
 body {
+    color: $dark-grey;
+    margin: 0;
+    padding: 0;
     font-family: Helvetica, Arial , sans-serif;
-    font-size: 1.6rem;
+    font-size: $s-size;
+    line-height: 1.6;
 }
 
 button {

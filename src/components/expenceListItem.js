@@ -6,12 +6,17 @@ import EditExpensifyPage from './editExpensifyPage';
 import moment from 'moment';
 import numeral from 'numeral';
 const ExpenceListItem = ({describtion,amount,createdAt,id}) =>(
-    <div>
-        <Link className="link-decoration" to={`/edit/${id}`}><h2>{describtion}</h2></Link>
-        {numeral(amount/100).format('$0,0.00')}
-         - 
-         {moment(createdAt).format('MMMM Do, YYYY')}
-    </div>
+    
+
+        <Link className="link-decoration list-item" to={`/edit/${id}`}>
+        <div>
+           <h2 className="list-item__title">{describtion}</h2>
+           <span className="list-item__subtitle">{moment(createdAt).format('MMMM Do, YYYY')}</span>
+        </div>
+        <h3 className="list-item__data">{numeral(amount/100).format('$0,0.00')}</h3>
+        </Link>
+
+   
 );
 
 export default ExpenceListItem;

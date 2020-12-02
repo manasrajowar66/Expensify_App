@@ -4,16 +4,27 @@ import getVisibleExpenes from '../store/visibleExpences';
 import { connect } from 'react-redux';
 
 export const ExpenceList = (props) =>(
-    <div>
-        {props.expences.length ===0 ? (<p>No expences avalable</p>) :
+    <div className="content-container">
+        <div className="list-header">
+            <div className="show-for-mobile">Expenses</div>
+            <div className="show-for-desktop">Expense</div>
+            <div className="show-for-desktop">Amount</div>
+        </div>
+        <div className="list-body">
+        {props.expences.length ===0 ? (
+            <div className="list-item list-item--message">
+              <span>No expences avalable</span>
+            </div>
+            
+            ) :
          (<div>
-            <h1>Expence List</h1>
         {props.expences.map((expence)=>{
             return (
                 <ExpenceListItem key={expence.id} {...expence}/>
             )
         })}
         </div>) }
+        </div>
     </div>
 );
 
