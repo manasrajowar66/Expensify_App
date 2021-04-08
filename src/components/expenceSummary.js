@@ -6,7 +6,7 @@ import numeral from 'numeral';
 import { Link } from 'react-router-dom'
 
 export const ExpenceSummary = ({totalCount , totalAmount})=>{
-    const expenceWord = totalCount === 1 ? 'expence' : 'expences';
+    const expenceWord = totalCount === 1 ? "expense" : "expenses";
     
     return(
         <div className="page-header">
